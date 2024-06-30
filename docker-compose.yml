@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  meleton_nginx:
+    container_name: meleton_nginx
+    build: ./docker/nginx
+    restart: always
+    ports:
+      - "8080:80"
+    links:
+      - meleton_php
+    volumes:
+      - ./docker/nginx/conf/hosts/:/etc/nginx/conf.d/
+      - ./laravel:/var/www
+
+  meleton_php:
+    container_name: meleton_php
+    build: ./docker/php
+    restart: always
+    volumes:
+      - ./laravel:/var/www
