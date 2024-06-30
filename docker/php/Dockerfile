@@ -11,5 +11,7 @@ RUN chmod u+x /usr/local/bin/install-php-extensions \
 
 COPY ./conf/opcache.ini /usr/local/etc/php/conf.d/
 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
 WORKDIR /var/www
 RUN chown -R www-data:www-data /var/www

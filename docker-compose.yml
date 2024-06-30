@@ -19,3 +19,18 @@ services:
     restart: always
     volumes:
       - ./laravel:/var/www
+
+  meleton_db:
+    image: mysql:8.4
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
