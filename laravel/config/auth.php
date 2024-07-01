@@ -2,6 +2,8 @@
 
 return [
 
+    'auth_token' => env('AUTH_TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
