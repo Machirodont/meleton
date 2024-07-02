@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "b8d42b54-4a69-4da6-a253-799c910c994a",
+		"name": "Meleton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31693412"
+	},
+	"item": [
+		{
+			"name": "Meleton rates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "azAZ09-_",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1?method=rates",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "rates"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Meleton convert",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "azAZ09-_",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1?method=convert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "method",
+							"value": "convert"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
