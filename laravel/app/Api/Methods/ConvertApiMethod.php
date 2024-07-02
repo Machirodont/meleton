@@ -35,7 +35,7 @@ readonly class ConvertApiMethod implements ApiMethodInterface
     {
         $convertedValue = $this->ratesCalculator->calculate($request);
 
-        $precision = $request->currencyFrom === RatesCalculator::BASE_CURRENCY ? 10 : 2;
+        $precision = $request->currencyFrom === RatesCalculator::BASE_CURRENCY ? 2 : 10;
 
         return new JsonResponse([
             'status' => 'success',
