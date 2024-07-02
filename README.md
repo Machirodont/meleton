@@ -1,3 +1,23 @@
+Задание 1
+---
+```mysql
+select
+    u.id as Id,
+    CONCAT(u.first_name, ' ', u.last_name) as Name,
+    b.author as Author,
+    GROUP_CONCAT(b.name SEPARATOR ',') as Books
+from book_users u
+left join user_books ub ON u.id=ub.user_id
+left join db.books b on b.id = ub.book_id
+where u.birthday BETWEEN DATE_SUB(NOW(), INTERVAL 7 YEAR ) and DATE_SUB(NOW(), INTERVAL 17 YEAR )
+and datediff(ub.return_date, ub.get_date) <= 14
+group by b.author, Id
+having COUNT(*)=2;
+```
+
+Задание 2
+---
+
 Развертывание и запуск
 ---
   - Окружение, на котором проверялось: Ubuntu 22.04, docker v27.0, docker-compose v1.29
